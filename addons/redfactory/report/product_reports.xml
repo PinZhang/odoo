@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- 隐藏 产品标签-->
+        <report
+            id="report_product_template_label"
+            string="Products Labels"
+            model="product.template"
+            report_type="qweb-pdf"
+            name="product.report_producttemplatelabel"
+            file="product.report_producttemplatelabel"
+            menu="False"/>
+
+        <!-- 客户报价单 -->
+        <report
+            id="report_redfactory_product_template_pricelist"
+            string="客户报价单"
+            model="product.template"
+            report_type="qweb-pdf"
+            name="redfactory.report_producttemplatepricelist"
+            file="redfactory.report_producttemplatepricelist"/>
+    </data>
+</odoo>

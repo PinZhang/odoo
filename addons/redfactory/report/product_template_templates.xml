@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="report_producttemplatepricelist">
+    <t t-call="report.html_container">
+        <div class="page">
+            <h2>客户报价表</h2>
+
+            <t t-foreach="docs" t-as="template">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>
+                                <strong>价格表</strong>
+                            </th>
+                            <th>
+                                <strong>价格（不含税、不含运费）</strong>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="template.item_ids" t-as="item">
+                            <td><span t-field="item.pricelist_id"/></td>
+                            <td><span t-field="item.fixed_price"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <t t-if="template.sale_delay">
+                    <p>货期：<span t-field="template.sale_delay"/>天</p>
+                </t>
+            </t>
+        </div>
+    </t>
+</template>
+</odoo>
